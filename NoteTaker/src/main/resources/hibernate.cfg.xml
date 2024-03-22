@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Here we need to configure all property 
+  	and mapping the class with hibernate 
+-->
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/HiberDB</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<!--  <property name="hbm2ddl.auto">create</property>
+		
+			*create will create new table every time so we need to 
+			change from.
+				
+			*update - will check if table exist then update otherwise
+			will create new table 
+		-->
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		
+		<mapping class ="com.com.entities.Note"></mapping>
+		<mapping class ="com.com.entities.SaveNoteServlet"></mapping>
+		
+		
+		
+	</session-factory>
+</hibernate-configuration>
