@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "notes")
@@ -17,6 +19,8 @@ public class Note {
 	
 	@Column(length = 1500)
 	private String content;
+	
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date addedDate;
 
 	public int getId() {
